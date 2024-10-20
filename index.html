@@ -26,10 +26,17 @@
         <div id="step2" style="display:none;">
             <h2>Step 2: Expense Distribution</h2>
             <form id="expensesForm">
-                <label>Food: <input type="number" name="food" min="0" max="100" step="1" onchange="updateTotal()">%</label>
-                <label>Housing: <input type="number" name="housing" min="0" max="100" step="1" onchange="updateTotal()">%</label>
-                <label>Transportation: <input type="number" name="transport" min="0" max="100" step="1" onchange="updateTotal()">%</label>
-                <!-- Add more fields as needed -->
+                <table id="expensesTable">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated dynamically -->
+                    </tbody>
+                </table>
                 <div id="totalPercentage">Total: 0%</div>
                 <div id="error" style="display:none;">Error: Total must be 100%</div>
                 <button type="button" id="calculateButton" style="display:none;" onclick="calculateInflation()">Calculate your personal inflation rate</button>

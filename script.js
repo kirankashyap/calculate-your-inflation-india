@@ -58,30 +58,17 @@ function populateExpensesForm() {
         "Personal care and effects"
     ];
 
-    const form = document.getElementById('expensesForm');
-    form.innerHTML = ''; // Clear existing form content
+    const tableBody = document.querySelector('#expensesTable tbody');
+    tableBody.innerHTML = ''; // Clear existing table content
 
     expensesData.forEach((item, index) => {
-        const div = document.createElement('div');
-        div.innerHTML = `
-            <label for="expense${index}">${item}:</label>
-            <input type="number" id="expense${index}" name="${item}" min="0" max="100" step="0.1" oninput="updateTotal()">
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><label for="expense${index}">${item}</label></td>
+            <td><input type="number" id="expense${index}" name="${item}" min="0" max="100" step="0.1" oninput="updateTotal()">%</td>
         `;
-        form.appendChild(div);
+        tableBody.appendChild(row);
     });
 
-    // Add total percentage display
-    const totalDiv = document.createElement('div');
-    totalDiv.innerHTML = '<span id="totalPercentage">Total: 0%</span>';
-    form.appendChild(totalDiv);
-
-    // Add error message
-    const errorDiv = document.createElement('div');
-    errorDiv.innerHTML = '<span id="error" style="display:none;">Total must equal 100%</span>';
-    form.appendChild(errorDiv);
-
-    // Add calculate button
-    const buttonDiv = document.createElement('div');
-    buttonDiv.innerHTML = '<button id="calculateButton" onclick="calculateInflation()" style="display:none;">Calculate Inflation</button>';
-    form.appendChild(buttonDiv);
+    // The total percentage, error message, and calculate button are already in the HTML
 }
