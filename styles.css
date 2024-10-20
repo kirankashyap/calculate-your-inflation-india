@@ -114,3 +114,29 @@ button:hover {
 .back-button:hover {
     background-color: #d32f2f;
 }
+
+/* Add these styles to the existing CSS */
+
+#inflationResult {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#inflationResult h3 {
+    margin-top: 0;
+}
+
+#inflationResult h2 {
+    color: #4CAF50;
+    font-size: 2em;
+}
+
+.reset-button {
+    background-color: #FFA500;
+}
+
+.reset-button:hover {
+    background-color: #FF8C00;
+}

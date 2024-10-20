@@ -11,6 +11,7 @@
         <div id="navigation">
             <button onclick="showStep(1)" class="nav-button active">Step 1</button>
             <button onclick="showStep(2)" class="nav-button">Step 2</button>
+            <button onclick="showStep(3)" class="nav-button">Step 3</button>
         </div>
 
         <!-- Step 1 -->
@@ -47,6 +48,14 @@
                 <button type="button" onclick="showStep(1)" class="back-button">Back</button>
                 <button type="button" id="calculateButton" style="display:none;" onclick="calculateInflation()">Calculate your personal inflation rate</button>
             </form>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="step3" class="step" style="display:none;">
+            <h2>Step 3: Your Personal Inflation Rate</h2>
+            <div id="inflationResult"></div>
+            <button type="button" onclick="showStep(2)" class="back-button">Back</button>
+            <button type="button" onclick="resetWizard()" class="reset-button">Start Over</button>
         </div>
     </div>
 
