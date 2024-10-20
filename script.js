@@ -3,6 +3,11 @@ let userLocation = '';
 let inflationData = {}; // Changed from const to let
 
 function showStep(step) {
+    // Prevent moving to step 3 if the button is disabled
+    if (step === 3 && document.getElementById('step3Button').disabled) {
+        return;
+    }
+
     document.querySelectorAll('.step').forEach(el => el.style.display = 'none');
     document.getElementById(`step${step}`).style.display = 'block';
     
@@ -99,6 +104,9 @@ function calculateInflation() {
         <p>Note: Categories with 0% weighted inflation are not shown in the breakdown.</p>
     `;
 
+    // Enable the Step 3 button after calculation
+    document.getElementById('step3Button').disabled = false;
+
     showStep(3);
 }
 
@@ -123,6 +131,10 @@ function resetWizard() {
     document.getElementById('name').value = '';
     document.querySelectorAll('input[name="location"]').forEach(radio => radio.checked = false);
     document.getElementById('expensesForm').reset();
+    
+    // Disable the Step 3 button when resetting
+    document.getElementById('step3Button').disabled = true;
+    
     showStep(1);
 }
 
