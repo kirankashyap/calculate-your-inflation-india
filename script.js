@@ -1,7 +1,17 @@
-function showStep2() {
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
-    populateExpensesForm();
+let currentStep = 1;
+
+function showStep(step) {
+    document.querySelectorAll('.step').forEach(el => el.style.display = 'none');
+    document.getElementById(`step${step}`).style.display = 'block';
+    
+    document.querySelectorAll('.nav-button').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-button')[step - 1].classList.add('active');
+    
+    currentStep = step;
+    
+    if (step === 2 && document.getElementById('expensesTable').querySelector('tbody').children.length === 0) {
+        populateExpensesForm();
+    }
 }
 
 function updateTotal() {
@@ -11,7 +21,7 @@ function updateTotal() {
         total += parseFloat(input.value) || 0;
     });
     const totalPercentage = document.getElementById('totalPercentage');
-    totalPercentage.textContent = `Total: ${total}%`;
+    totalPercentage.textContent = `Total: ${total.toFixed(1)}%`;
 
     const error = document.getElementById('error');
     const calculateButton = document.getElementById('calculateButton');
@@ -69,6 +79,7 @@ function populateExpensesForm() {
         `;
         tableBody.appendChild(row);
     });
-
-    // The total percentage, error message, and calculate button are already in the HTML
 }
+
+// Initialize the first step
+showStep(1);

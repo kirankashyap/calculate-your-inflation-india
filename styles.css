@@ -17,6 +17,24 @@ h2 {
     color: #333;
 }
 
+#navigation {
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
 #expensesTable {
     width: 100%;
     border-collapse: collapse;

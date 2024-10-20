@@ -8,8 +8,13 @@
 </head>
 <body>
     <div id="wizard">
+        <div id="navigation">
+            <button onclick="showStep(1)" class="nav-button active">Step 1</button>
+            <button onclick="showStep(2)" class="nav-button">Step 2</button>
+        </div>
+
         <!-- Step 1 -->
-        <div id="step1">
+        <div id="step1" class="step">
             <h2>Step 1: Basic Information</h2>
             <label for="name">Name (Optional):</label>
             <input type="text" id="name">
@@ -19,11 +24,10 @@
             <label>
                 <input type="radio" name="location" value="urban"> Urban
             </label>
-            <button onclick="showStep2()">Next</button>
         </div>
 
         <!-- Step 2 -->
-        <div id="step2" style="display:none;">
+        <div id="step2" class="step" style="display:none;">
             <h2>Step 2: Expense Distribution</h2>
             <form id="expensesForm">
                 <table id="expensesTable">
