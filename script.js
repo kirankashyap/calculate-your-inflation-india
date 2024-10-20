@@ -42,6 +42,7 @@ function calculateInflation() {
     const inputs = document.querySelectorAll('#expensesForm input[type="number"]');
     let personalInflation = 0;
     let totalWeight = 0;
+    let calculationDetails = [];
 
     inputs.forEach(input => {
         const category = input.name;
@@ -49,8 +50,16 @@ function calculateInflation() {
         const inflationKey = userLocation === 'rural' ? 'Reported Inflation - Rural' : 'Reported Inflation - Urban';
         const categoryInflation = inflationData[category][inflationKey];
         
-        personalInflation += (userPercentage / 100) * categoryInflation;
+        const weightedInflation = (userPercentage / 100) * categoryInflation;
+        personalInflation += weightedInflation;
         totalWeight += userPercentage;
+
+        calculationDetails.push({
+            category,
+            userPercentage,
+            categoryInflation,
+            weightedInflation
+        });
     });
 
     if (totalWeight !== 100) {
@@ -63,6 +72,28 @@ function calculateInflation() {
         <h3>Your Personal Inflation Rate</h3>
         <p>Based on your expense distribution and ${userLocation} location, your personal inflation rate is:</p>
         <h2>${personalInflation.toFixed(2)}%</h2>
+        <h4>Calculation Breakdown:</h4>
+        <table id="calculationTable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Your %</th>
+                    <th>Category Inflation</th>
+                    <th>Weighted Inflation</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${calculationDetails.map(detail => `
+                    <tr>
+                        <td>${detail.category}</td>
+                        <td>${detail.userPercentage.toFixed(1)}%</td>
+                        <td>${detail.categoryInflation.toFixed(2)}%</td>
+                        <td>${detail.weightedInflation.toFixed(2)}%</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+        <p>Your personal inflation rate is the sum of all weighted inflation values.</p>
     `;
 
     showStep(3);
