@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Wizard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="wizard">
+        <!-- Step 1 -->
+        <div id="step1">
+            <h2>Step 1: Basic Information</h2>
+            <label for="name">Name (Optional):</label>
+            <input type="text" id="name">
+            <label>
+                <input type="radio" name="location" value="rural"> Rural
+            </label>
+            <label>
+                <input type="radio" name="location" value="urban"> Urban
+            </label>
+            <button onclick="showStep2()">Next</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step2" style="display:none;">
+            <h2>Step 2: Expense Distribution</h2>
+            <form id="expensesForm">
+                <label>Food: <input type="number" name="food" min="0" max="100" step="1" onchange="updateTotal()">%</label>
+                <label>Housing: <input type="number" name="housing" min="0" max="100" step="1" onchange="updateTotal()">%</label>
+                <label>Transportation: <input type="number" name="transport" min="0" max="100" step="1" onchange="updateTotal()">%</label>
+                <!-- Add more fields as needed -->
+                <div id="totalPercentage">Total: 0%</div>
+                <div id="error" style="display:none;">Error: Total must be 100%</div>
+                <button type="button" id="calculateButton" style="display:none;" onclick="calculateInflation()">Calculate your personal inflation rate</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

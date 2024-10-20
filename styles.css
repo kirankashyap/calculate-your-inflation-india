@@ -1,0 +1,11 @@
+#error {
+    color: red;
+}
+
+#totalPercentage.ok {
+    color: green;
+}
+
+button {
+    margin-top: 10px;
+}
