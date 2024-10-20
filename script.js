@@ -54,12 +54,14 @@ function calculateInflation() {
         personalInflation += weightedInflation;
         totalWeight += userPercentage;
 
-        calculationDetails.push({
-            category,
-            userPercentage,
-            categoryInflation,
-            weightedInflation
-        });
+        if (weightedInflation !== 0) {
+            calculationDetails.push({
+                category,
+                userPercentage,
+                categoryInflation,
+                weightedInflation
+            });
+        }
     });
 
     if (totalWeight !== 100) {
@@ -94,6 +96,7 @@ function calculateInflation() {
             </tbody>
         </table>
         <p>Your personal inflation rate is the sum of all weighted inflation values.</p>
+        <p>Note: Categories with 0% weighted inflation are not shown in the breakdown.</p>
     `;
 
     showStep(3);
