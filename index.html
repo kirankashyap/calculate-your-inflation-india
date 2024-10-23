@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Wizard</title>
+    <title>India Inflation Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
     <div id="wizard">
+        <div class="banner">
+            <h1>Personal Inflation Calculator - India </h1>
+        </div>
         <div id="navigation">
             <button onclick="showStep(1)" class="nav-button active">Step 1</button>
             <button onclick="showStep(2)" class="nav-button">Step 2</button>
@@ -31,6 +36,7 @@
         <!-- Step 2 -->
         <div id="step2" class="step" style="display:none;">
             <h2>Step 2: Expense Distribution</h2>
+            <p class="instruction">If your total monthly expense was ₹100, how would you split it across these categories? Enter percentages for each category.</p>
             <form id="expensesForm">
                 <table id="expensesTable">
                     <thead>

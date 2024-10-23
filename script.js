@@ -75,10 +75,18 @@ function calculateInflation() {
     }
 
     const resultDiv = document.getElementById('inflationResult');
+    const userName = document.getElementById('name').value.trim();
+    const personalGreeting = userName ? `<h3>Hello ${userName}!</h3>` : '';
+    var text = 'You can also calculate your personal inflation rate at https://kirankashyap.github.io/calculate-your-inflation-india/'
+    const shareText = `My personal inflation rate is ${personalInflation.toFixed(2)}%. ${text}`;
+    const encodedShareText = encodeURIComponent(shareText);
+
     resultDiv.innerHTML = `
+        ${personalGreeting}
         <h3>Your Personal Inflation Rate</h3>
-        <p>Based on your expense distribution and ${userLocation} location, your personal inflation rate is:</p>
+        <p>Based on your expense distribution and ${userLocation} location, your personal inflation rate for the past year is:</p>
         <h2>${personalInflation.toFixed(2)}%</h2>
+        <p>This means that in the last year, you have spent approximately ${personalInflation.toFixed(2)}% more than the previous year due to inflation.</p>
         <h4>Calculation Breakdown:</h4>
         <table id="calculationTable">
             <thead>
@@ -102,6 +110,12 @@ function calculateInflation() {
         </table>
         <p>Your personal inflation rate is the sum of all weighted inflation values.</p>
         <p>Note: Categories with 0% weighted inflation are not shown in the breakdown.</p>
+        <p class="data-source">Category inflation data has been taken from the Ministry of Statistics and Programme Implementation. For more information, visit <a href="https://mospi.gov.in/cpi" target="_blank">https://mospi.gov.in/cpi</a>.</p>
+        <div class="share-buttons">
+            <p>Share your result:</p>
+            <a href="https://api.whatsapp.com/send?text=${encodedShareText}" target="_blank" class="share-button whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/share/url?url=${shareText}" target="_blank" class="share-button telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
     `;
 
     // Enable the Step 3 button after calculation
