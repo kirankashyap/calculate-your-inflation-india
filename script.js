@@ -84,16 +84,16 @@ function calculateInflation() {
     resultDiv.innerHTML = `
         ${personalGreeting}
         <h3>Your Personal Inflation Rate</h3>
-        <p>Based on your expense distribution and ${userLocation} location, your personal inflation rate for the past year is:</p>
+        <p>Based on your expense distribution and ${userLocation} location, your personal inflation rate for the year 2024 is:</p>
         <h2>${personalInflation.toFixed(2)}%</h2>
-        <p>This means that in the last year, you have spent approximately ${personalInflation.toFixed(2)}% more than the previous year due to inflation.</p>
+        <p>This means that in 2024, you expenses are approximately ${personalInflation.toFixed(2)}% more than the 2023 due to inflation.</p>
         <h4>Calculation Breakdown:</h4>
         <table id="calculationTable">
             <thead>
                 <tr>
                     <th>Category</th>
                     <th>Your %</th>
-                    <th>Category Inflation</th>
+                    <th>Category Inflation (reported by MOSPI)</th>
                     <th>Weighted Inflation</th>
                 </tr>
             </thead>
