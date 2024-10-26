@@ -126,12 +126,12 @@ function calculateInflation() {
             <tbody>
                 ${calculationDetails.map(detail => `
                     <tr>
-                        <td>${detail.category}</td>
-                        <td>${detail.userPercentage.toFixed(1)}%</td>
-                        <td>${detail.categoryInflation.toFixed(2)}%</td>
-                        <td>${detail.weightedInflation.toFixed(2)}%</td>
-                        <td>${detail.inflationSince2012}%</td>
-                        <td>${detail.weightedInflationSince2012}%</td>
+                        <td data-label="Category"><span>${detail.category}</span></td>
+                        <td data-label="Your %"><span>${detail.userPercentage.toFixed(1)}%</span></td>
+                        <td data-label="2023-2024 Inflation"><span>${detail.categoryInflation.toFixed(2)}%</span></td>
+                        <td data-label="Weighted 2023-2024"><span>${detail.weightedInflation.toFixed(2)}%</span></td>
+                        <td data-label="Inflation Since 2012"><span>${detail.inflationSince2012}%</span></td>
+                        <td data-label="Weighted Since 2012"><span>${detail.weightedInflationSince2012}%</span></td>
                     </tr>
                 `).join('')}
             </tbody>
