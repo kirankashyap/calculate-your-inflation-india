@@ -142,7 +142,8 @@ function calculateInflation() {
         <div class="share-buttons">
             <p>Share your result:</p>
             <a href="https://api.whatsapp.com/send?text=${encodedShareText}" target="_blank" class="share-button whatsapp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/share/url?url=${shareText}" target="_blank" class="share-button telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://t.me/share/url?url=${encodedShareText}" target="_blank" class="share-button telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://twitter.com/intent/tweet?text=${encodedShareText}" target="_blank" class="share-button twitter"><i class="fab fa-twitter"></i></a>
         </div>
     `;
 
