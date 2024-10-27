@@ -88,7 +88,7 @@ function calculateInflation() {
     const userName = document.getElementById('name').value.trim();
     const personalGreeting = userName ? `<h3>Hello ${userName}!</h3>` : '';
     var text = 'You can also calculate your personal inflation rate at https://kirankashyap.github.io/calculate-your-inflation-india/'
-    const shareText = `My personal inflation rate is ${personalInflation.toFixed(2)}% for 2023-2024, and ${personalInflationSince2012.toFixed(2)}% since 2012. ${text}`;
+    const shareText = `My personal #inflation rate at #india is ${personalInflation.toFixed(2)}% for 2023-2024, and ${personalInflationSince2012.toFixed(2)}% since 2012. ${text}`;
     const encodedShareText = encodeURIComponent(shareText);
 
     resultDiv.innerHTML = `
