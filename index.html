@@ -51,14 +51,18 @@
         <!-- Step 1 -->
         <div id="step1" class="step">
             <h2>Step 1: Basic Information</h2>
-            <label for="name">Name (Optional):</label>
-            <input type="text" id="name">
-            <label>
-                <input type="radio" name="location" value="rural"> Rural
-            </label>
-            <label>
-                <input type="radio" name="location" value="urban"> Urban
-            </label>
+            <div>
+                <label for="name">Name (Optional):</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="location" value="rural"> Rural
+                </label>
+                <label>
+                    <input type="radio" name="location" value="urban" checked> Urban
+                </label>
+            </div>            
             <button onclick="showStep(2)" class="next-button">Next</button>
         </div>
 
