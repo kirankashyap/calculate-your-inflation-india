@@ -5,12 +5,12 @@ let inflationData = {}; // Changed from const to let
 // Add this at the beginning of your script, after the inflationData declaration
 const categoryData = [
     // Cereals and Products
-    { Item_Code: "Cereals and Products", Item: "rice PDS" },
+    { Item_Code: "Cereals and Products", Item: "rice PDS (Ration)" },
     { Item_Code: "Cereals and Products", Item: "rice other sources" },
     { Item_Code: "Cereals and Products", Item: "chira" },
     { Item_Code: "Cereals and Products", Item: "muri" },
     { Item_Code: "Cereals and Products", Item: "other rice products" },
-    { Item_Code: "Cereals and Products", Item: "wheat/ atta PDS" },
+    { Item_Code: "Cereals and Products", Item: "wheat/ atta PDS (Ration)" },
     { Item_Code: "Cereals and Products", Item: "wheat/ atta other sources" },
     { Item_Code: "Cereals and Products", Item: "maida" },
     { Item_Code: "Cereals and Products", Item: "suji, rawa" },
@@ -119,7 +119,7 @@ const categoryData = [
     { Item_Code: "Pulses and products", Item: "other pulse products" },
 
     // Sugar and Confectionery
-    { Item_Code: "Sugar and Confectionery", Item: "sugar - PDS" },
+    { Item_Code: "Sugar and Confectionery", Item: "sugar - PDS (Ration)" },
     { Item_Code: "Sugar and Confectionery", Item: "sugar - other sources" },
     { Item_Code: "Sugar and Confectionery", Item: "gur" },
     { Item_Code: "Sugar and Confectionery", Item: "candy, misri" },
@@ -213,7 +213,7 @@ const categoryData = [
     // Fuel and light
     { Item_Code: "Fuel and light", Item: "electricity (std. unit)" },
     { Item_Code: "Fuel and light", Item: "LPG [excl. conveyance]" },
-    { Item_Code: "Fuel and light", Item: "kerosene PDS (litre)" },
+    { Item_Code: "Fuel and light", Item: "kerosene PDS (Ration) (litre)" },
     { Item_Code: "Fuel and light", Item: "kerosene other sources (litre)" },
     { Item_Code: "Fuel and light", Item: "diesel (litre) [excl. conveyance]" },
     { Item_Code: "Fuel and light", Item: "other fuel" },
